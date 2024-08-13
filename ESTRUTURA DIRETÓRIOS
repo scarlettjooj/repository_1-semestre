@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+ 
+mkdir -p renata
+mkdir -p renata/defesa_cibernetica
+mkdir -p renata/defesa_cibernetica/{hacker_mindset,linux,redes}
+ 
+echo "anotacoes das aulas" > renata/defesa_cibernetica/hacker_mindset/notas.txt
+echo "anotacoes das aulas" > renata/defesa_cibernetica/linux/notas.txt
+echo "anotacoes das aulas" > renata/defesa_cibernetica/redes/notas.txt
