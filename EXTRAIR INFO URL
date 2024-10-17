@@ -3,6 +3,7 @@
 # Função para extrair URLs do site
 extract_urls() {
     local url="$1"
+    echo "Extraindo URLs de: $url"
     curl -s "$url" | grep -oP 'href="\K[^"]+' | while read -r link; do
         echo "$link"
     done
@@ -11,6 +12,7 @@ extract_urls() {
 # Função para extrair formulários e inputs de texto
 extract_forms_and_inputs() {
     local url="$1"
+    echo "Extraindo formulários de: $url"
     curl -s "$url" | grep -oP '<form.*?</form>' | while read -r form; do
         echo "Formulário encontrado:"
         echo "$form" | grep -oP 'name="\K[^"]+' | while read -r input; do
@@ -20,5 +22,7 @@ extract_forms_and_inputs() {
 }
 
 # Exemplo de uso
-extract_urls "https://www.example.com"
-extract_forms_and_inputs "https://www.example.com"
+URL="https://www.example.com"
+extract_urls "$URL"
+extract_forms_and_inputs "$URL"
+
